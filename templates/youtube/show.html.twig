@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Youtube{% endblock %}
+
+{% block body %}
+<h1>Youtube</h1>
+
+<h2>{{ name }}</h2>
+<div>{{ url|youtube_player|raw }}</div>
+
+
+<a href="{{ path('youtube_index') }}">back to list</a>
+
+<a href="{{ path('youtube_edit', {'id': youtube.id}) }}">edit</a>
+
+{{ include('youtube/_delete_form.html.twig') }}
+{% endblock %}

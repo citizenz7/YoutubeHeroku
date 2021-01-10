@@ -17,7 +17,7 @@ class YoutubeType extends AbstractType
         $builder
             ->add('url', UrlType::class)
             ->add('name', TextType::class)
-            ->add('Submit', SubmitType::class)
+
         ;
     }
 
