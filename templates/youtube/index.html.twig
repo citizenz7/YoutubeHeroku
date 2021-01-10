@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h2>Toutes les vidéos de NIGHTWISH</h2>
+<h1>Best Nightwish videos</h1>
 <div class="row row-cols-1 row-cols-md-2 g-4">
     {% for youtube in youtubes %}
     <div class="col">
@@ -12,7 +12,14 @@
             <a href="{{ path('youtube_show', {'id': youtube.id }) }}"><img src="{{ youtube.url|youtube_thumbnail }}" class="card-img-top"></a>
             <div class="card-body">
                 <h5 class="card-title">{{ youtube.name }}</h5>
-                <a class="btn btn-sm btn-primary" href="{{ path('youtube_edit', {'id': youtube.id}) }}">edit</a> {{ include('youtube/_delete_form.html.twig') }}
+                <div class="row">
+                    <div class="col-sm-1">
+                        <a class="btn btn-sm btn-primary" href="{{ path('youtube_edit', {'id': youtube.id}) }}">Edit</a>
+                    </div>
+                    <div class="col-sm-1">
+                        {{ include('youtube/_delete_form.html.twig') }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
